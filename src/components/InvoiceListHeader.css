@@ -1,0 +1,162 @@
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.header-text h1 {
+  font-size: 32px;
+  letter-spacing: -1px;
+  margin-bottom: 8px;
+}
+
+.header-text p {
+  color: var(--color-text-secondary);
+  font-size: 12px;
+}
+
+.mobile-count {
+  display: none;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.filter-container {
+  position: relative;
+}
+
+.filter-btn {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-weight: 700;
+  font-size: 12px;
+  color: var(--color-text-main);
+}
+
+.chevron {
+  transition: transform 0.3s ease;
+}
+
+.chevron.open {
+  transform: rotate(180deg);
+}
+
+.filter-dropdown {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--color-card-bg);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  padding: 24px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 192px;
+  z-index: 10;
+}
+
+.filter-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.filter-option input {
+  display: none;
+}
+
+.checkbox-custom {
+  width: 16px;
+  height: 16px;
+  background-color: var(--color-border);
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.filter-option:hover .checkbox-custom {
+  border: 1px solid var(--color-primary);
+}
+
+.filter-option input:checked + .checkbox-custom {
+  background-color: var(--color-primary);
+}
+
+
+.new-btn {
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+  padding: 8px 15px 8px 8px;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.new-btn:hover {
+  background-color: var(--color-primary-light);
+}
+
+.plus-circle {
+  background-color: #FFFFFF;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-text {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .list-header {
+    margin-bottom: 32px;
+  }
+
+  .header-text h1 {
+    font-size: 20px;
+  }
+
+  .desktop-count {
+    display: none;
+  }
+
+  .mobile-count {
+    display: block;
+  }
+
+  .header-actions {
+    gap: 18px;
+  }
+
+  .desktop-text {
+    display: none;
+  }
+
+  .mobile-text {
+    display: block;
+  }
+
+  .filter-btn {
+    gap: 12px;
+  }
+}

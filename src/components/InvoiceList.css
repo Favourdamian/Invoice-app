@@ -1,0 +1,53 @@
+.invoice-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 64px;
+  padding-bottom: 64px;
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 72px;
+  text-align: center;
+}
+
+
+
+.empty-img-container {
+  margin-bottom: 24px;
+}
+
+.empty-illustration {
+  width: 240px;
+  max-width: 90%;
+  height: auto;
+}
+
+.empty-state h2 {
+  font-size: 20px;
+  margin-bottom: 24px;
+  color: var(--color-text-main);
+}
+
+.empty-state p {
+  color: var(--color-text-secondary);
+  font-size: 12px;
+  line-height: 15px;
+}
+
+.empty-state p span {
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .invoice-list {
+    margin-top: 32px;
+  }
+  .empty-state {
+    margin-top: 50px;
+  }
+}

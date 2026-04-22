@@ -1,0 +1,139 @@
+.invoice-card {
+  background-color: var(--color-card-bg);
+  padding: 16px 24px;
+  border-radius: 8px;
+  display: grid;
+  grid-template-columns: 80px 140px 1fr 120px 120px 20px;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+  transition: var(--transition);
+  margin-bottom: 16px;
+  box-shadow: 0 10px 10px -10px rgba(72, 84, 159, 0.1);
+  border: 1px solid transparent;
+}
+
+.invoice-card:hover {
+  border-color: var(--color-primary);
+}
+
+.invoice-card .id {
+  font-weight: 700;
+  font-size: 12px;
+  color: var(--color-text-main);
+  text-transform: uppercase;
+}
+
+.invoice-card .id span {
+  color: var(--color-text-secondary);
+}
+
+.invoice-card .due-date {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+}
+
+.invoice-card .client-name {
+  font-size: 12px;
+  color: var(--color-text-accent);
+}
+
+.invoice-card .total {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-text-main);
+  text-align: right;
+  padding-right: 16px;
+}
+
+/* Status Badge Styles */
+.status-badge {
+  width: 104px;
+  height: 40px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 12px;
+  text-transform: capitalize;
+}
+
+.status-badge .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.status-badge.paid {
+  color: var(--color-paid);
+  background-color: var(--color-paid-bg-light);
+}
+.status-badge.paid .dot { background-color: var(--color-paid); }
+
+.status-badge.pending {
+  color: var(--color-pending);
+  background-color: var(--color-pending-bg-light);
+}
+.status-badge.pending .dot { background-color: var(--color-pending); }
+
+.status-badge.draft {
+  color: var(--color-draft);
+  background-color: var(--color-draft-bg-light);
+}
+.status-badge.draft .dot { background-color: var(--color-draft); }
+
+[data-theme='dark'] .status-badge.draft {
+  color: var(--color-draft-dark);
+  background-color: var(--color-draft-bg-dark);
+}
+[data-theme='dark'] .status-badge.draft .dot { background-color: var(--color-draft-dark); }
+
+.invoice-card .arrow {
+  justify-self: end;
+}
+
+@media (max-width: 768px) {
+  .invoice-card {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    padding: 24px;
+    gap: 8px;
+  }
+
+  .invoice-card .id {
+    grid-column: 1;
+    grid-row: 1;
+    margin-bottom: 24px;
+  }
+
+  .invoice-card .client-name {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: end;
+    margin-bottom: 24px;
+  }
+
+  .invoice-card .due-date {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .invoice-card .total {
+    grid-column: 1;
+    grid-row: 3;
+    text-align: left;
+    font-size: 18px;
+  }
+
+  .invoice-card .status-badge {
+    grid-column: 2;
+    grid-row: 2 / span 2;
+    justify-self: end;
+  }
+
+  .invoice-card .arrow {
+    display: none;
+  }
+}
